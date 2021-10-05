@@ -14,7 +14,7 @@ public class PointManager {
 	
 	
 	public void intputPoint(int log) {
-		System.out.print("[¸Ş¼¼Áö] ÃæÀü½Ã ÃæÀüº¸³Ê½º 10%°¡ Ãß°¡ÃæÀüÀÌ µË´Ï´Ù\nÃæÀüÇÒ ±İ¾×À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("[ë©”ì„¸ì§€] ì¶©ì „ì‹œ ì¶©ì „ë³´ë„ˆìŠ¤ 10%ê°€ ì¶”ê°€ì¶©ì „ì´ ë©ë‹ˆë‹¤\nì¶©ì „í•  ê¸ˆì•¡ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 		String input = ShopManager.sc.next();
 		
 		try {
@@ -24,14 +24,14 @@ public class PointManager {
 			int balance = this.points.get(log).getPoint();
 			balance += point + bonus;
 			this.points.get(log).setPoint(balance);
-			System.out.println("[¸Ş¼¼Áö] ÃæÀüÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù");
-			System.out.println("»ç¿ë °¡´É Point [ " + this.points.get(log).getPoint() + " ]");
+			System.out.println("[ë©”ì„¸ì§€] ì¶©ì „ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤");
+			System.out.println("ì‚¬ìš© ê°€ëŠ¥ Point [ " + this.points.get(log).getPoint() + " ]");
 		} catch (Exception e) {
 		}
 	}
 	
 	public void outPoint(int log) {
-		System.out.print("[¸Ş¼¼Áö] È¯ºÒ½Ã È¯ºÒÆ÷ÀÎÆ®ÀÇ ¼ö¼ö·á 20%¸¦ Á¦ÇÑ ±İ¾×ÀÌ È¯ºÒµË´Ï´Ù\nÈ¯ºÒÇÒ ±İ¾×À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("[ë©”ì„¸ì§€] í™˜ë¶ˆì‹œ í™˜ë¶ˆí¬ì¸íŠ¸ì˜ ìˆ˜ìˆ˜ë£Œ 20%ë¥¼ ì œí•œ ê¸ˆì•¡ì´ í™˜ë¶ˆë©ë‹ˆë‹¤\ní™˜ë¶ˆí•  ê¸ˆì•¡ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 		String input = ShopManager.sc.next();
 		
 		try {
@@ -39,28 +39,28 @@ public class PointManager {
 			
 			double commission = point*0.2;
 			while(true) {
-				System.out.println("½ÇÁ¦È¯ºÒ ±İ¾×Àº " + (point-commission) + "¿ø ÀÔ´Ï´Ù\nÈ¯ºÒÀ» ÁøÇàÇÏ½Ã°Ú½À´Ï±î [1]Yes [2]No");
+				System.out.println("ì‹¤ì œí™˜ë¶ˆ ê¸ˆì•¡ì€ " + (point-commission) + "ì› ì…ë‹ˆë‹¤\ní™˜ë¶ˆì„ ì§„í–‰í•˜ì‹œê² ìŠµë‹ˆê¹Œ [1]Yes [2]No");
 				int sel = ShopManager.sc.nextInt();
 				if(sel == 1) {
 					int balance = this.points.get(log).getPoint();
 					if(point <= balance) {
 						balance -= point;
 						this.points.get(log).setPoint(balance);
-						System.out.println("[¸Ş¼¼Áö] È¯ºÒÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù");
-						System.out.println("»ç¿ë °¡´É Point [ " + this.points.get(log).getPoint() + " ]");
-					} else System.out.println("[¸Ş¼¼Áö] º¸À¯ÇÏ½Å Æ÷ÀÎÆ®°¡ ºÎÁ·ÇÕ´Ï´Ù");
+						System.out.println("[ë©”ì„¸ì§€] í™˜ë¶ˆì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤");
+						System.out.println("ì‚¬ìš© ê°€ëŠ¥ Point [ " + this.points.get(log).getPoint() + " ]");
+					} else System.out.println("[ë©”ì„¸ì§€] ë³´ìœ í•˜ì‹  í¬ì¸íŠ¸ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤");
 				} else if (sel == 2) {
-					System.out.println("[¸Ş¼¼Áö] È¯ºÒ ÁøÇàÀÌ Ãë¼ÒµÇ¾ú½À´Ï´Ù");
+					System.out.println("[ë©”ì„¸ì§€] í™˜ë¶ˆ ì§„í–‰ì´ ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤");
 					break;
 				}
-				else System.out.println("[¸Ş¼¼Áö] Àß¸ø ÀÔ·Â ÇÏ¼Ì½À´Ï´Ù");
+				else System.out.println("[ë©”ì„¸ì§€] ì˜ëª» ì…ë ¥ í•˜ì…¨ìŠµë‹ˆë‹¤");
 			}
 		} catch (Exception e) {
 		}
 	}
 	
 		public void printPoint(int log) {
-			System.out.println("[ " + UserManager.instance.getUser(log).getId() + " ] ´ÔÀÇ »ç¿ë °¡´É Point : " + points.get(log).getPoint());
+			System.out.println("[ " + UserManager.instance.getUser(log).getId() + " ] ë‹˜ì˜ ì‚¬ìš© ê°€ëŠ¥ Point : " + points.get(log).getPoint());
 		}
 
 	public void addPoint(int log) {
@@ -68,7 +68,7 @@ public class PointManager {
 		points.add(log, bonus);
 	}
 	
-	// Á¶È¸
+	// ì¡°íšŒ
 	
 	public Point getPoint(int log) {
 		return this.points.get(log);

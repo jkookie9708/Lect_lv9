@@ -29,8 +29,8 @@ public class ShopManager {
 	}
 	
 	private void printMenu() {
-		if(Shop.log == -1) System.out.println("[1] È¸¿ø°¡ÀÔ\n[2] ·Î±×ÀÎ\n[3] È¸¿øÅ»Åğ\n[100] °ü¸®ÀÚ¸ğµå");
-		else System.out.println("[1] ¼îÇÎ\n[2] Àå¹Ù±¸´Ï¸ñ·Ï\n[3] Æ÷ÀÎÆ® Á¶È¸\n[4] Æ÷ÀÎÆ® ÃæÀü\n[5] Æ÷ÀÎÆ® È¯ºÒ\n[6] ·Î±×¾Æ¿ô");
+		if(Shop.log == -1) System.out.println("[1] íšŒì›ê°€ì…\n[2] ë¡œê·¸ì¸\n[3] íšŒì›íƒˆí‡´\n[100] ê´€ë¦¬ìëª¨ë“œ");
+		else System.out.println("[1] ì‡¼í•‘\n[2] ì¥ë°”êµ¬ë‹ˆëª©ë¡\n[3] í¬ì¸íŠ¸ ì¡°íšŒ\n[4] í¬ì¸íŠ¸ ì¶©ì „\n[5] í¬ì¸íŠ¸ í™˜ë¶ˆ\n[6] ë¡œê·¸ì•„ì›ƒ");
 	}
 	
 	private void selectMenu() {
@@ -62,11 +62,11 @@ public class ShopManager {
 		boolean isRun = true;
 		while (isRun) {
 			im.printCategory();
-			System.out.println("[Ä«Å×°í¸®] ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.[Á¾·á.-1]");
+			System.out.println("[ì¹´í…Œê³ ë¦¬] ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.[ì¢…ë£Œ.-1]");
 			int caID = sc.nextInt();
 			if (caID == -1)
 				break;
-			System.out.println("[¾ÆÀÌÅÛ] ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä. ");
+			System.out.println("[ì•„ì´í…œ] ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”. ");
 			im.printItem();
 			int itID = sc.nextInt();
 		}
@@ -75,7 +75,7 @@ public class ShopManager {
 	void cartMenu() {
 		boolean isRun = true;
 		while (isRun) {
-			System.out.println("[1] ³» Àå¹Ù±¸´Ï\n[2] Àå¹Ù±¸´Ï ºñ¿ì±â\n[3] Àå¹Ù±¸´Ï °áÁ¦\n[0] µÚ·Î°¡±â");
+			System.out.println("[1] ë‚´ ì¥ë°”êµ¬ë‹ˆ\n[2] ì¥ë°”êµ¬ë‹ˆ ë¹„ìš°ê¸°\n[3] ì¥ë°”êµ¬ë‹ˆ ê²°ì œ\n[0] ë’¤ë¡œê°€ê¸°");
 			int sel = sc.nextInt();
 			if (sel == 1) cm.printCart(Shop.log);
 			else if(sel == 2) cm.emptyCart(Shop.log);
@@ -85,13 +85,13 @@ public class ShopManager {
 	}
 	
 	private void managerLogin() {
-		System.out.print("Manager Code¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("Manager Codeë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		String Code = sc.next();
 		
 		try {
 			if(Code.equals(manager.getManagerCode())) {
 				managerMenu();
-			} else System.out.println("[¸Ş¼¼Áö] Manager Code °¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù");
+			} else System.out.println("[ë©”ì„¸ì§€] Manager Code ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -101,7 +101,7 @@ public class ShopManager {
 	void managerMenu() {
 		boolean run = true;
 		while (run) {
-			System.out.println("[1] ¾ÆÀÌÅÛ°ü¸®\n[2] Ä«Å×°í¸®°ü¸®\n[3] À¯Àú°ü¸®\n[0] µÚ·Î°¡±â");
+			System.out.println("[1] ì•„ì´í…œê´€ë¦¬\n[2] ì¹´í…Œê³ ë¦¬ê´€ë¦¬\n[3] ìœ ì €ê´€ë¦¬\n[0] ë’¤ë¡œê°€ê¸°");
 			int sel = sc.nextInt();
 			if (sel == 1) itemMenu();
 			else if (sel == 2) categoryMenu();
@@ -114,7 +114,7 @@ public class ShopManager {
 	void itemMenu() {
 		boolean isRun = true;
 		while (isRun) {
-			System.out.println("[1]ÀüÃ¼¾ÆÀÌÅÛ\n[2] ¾ÆÀÌÅÛÃß°¡\n[3] ¾ÆÀÌÅÛ»èÁ¦\n[0] µÚ·Î°¡±â");
+			System.out.println("[1]ì „ì²´ì•„ì´í…œ\n[2] ì•„ì´í…œì¶”ê°€\n[3] ì•„ì´í…œì‚­ì œ\n[0] ë’¤ë¡œê°€ê¸°");
 			int sel = sc.nextInt();
 			if (sel == 1) im.printItem();
 			else if (sel == 2) im.addItem();
@@ -128,7 +128,7 @@ public class ShopManager {
 	void categoryMenu() {
 		boolean isRun = true;
 		while (isRun) {
-			System.out.println("[1] ÀüÃ¼Ä«Å×°í¸®\n[2] Ä«Å×°í¸®Ãß°¡\n[3] Ä«Å×°í¸®»èÁ¦\n[0] µÚ·Î°¡±â");
+			System.out.println("[1] ì „ì²´ì¹´í…Œê³ ë¦¬\n[2] ì¹´í…Œê³ ë¦¬ì¶”ê°€\n[3] ì¹´í…Œê³ ë¦¬ì‚­ì œ\n[0] ë’¤ë¡œê°€ê¸°");
 			int sel = sc.nextInt();
 			
 			if (sel == 1) im.printCategory();
@@ -141,7 +141,7 @@ public class ShopManager {
 	void userMenu() {
 		boolean isRun = true;
 		while (isRun) {
-			System.out.println("[1] ÀüÃ¼À¯Àú\n[2] À¯ÀúÃß°¡\n[3] À¯Àú»èÁ¦\n[0] µÚ·Î°¡±â");
+			System.out.println("[1] ì „ì²´ìœ ì €\n[2] ìœ ì €ì¶”ê°€\n[3] ìœ ì €ì‚­ì œ\n[0] ë’¤ë¡œê°€ê¸°");
 			int sel = sc.nextInt();
 			if (sel == 1) um.printUser();
 			else if(sel == 2) um.managerJoinUser();
@@ -151,21 +151,21 @@ public class ShopManager {
 	}
 	
 	private void login() {
-		System.out.print("[¸Ş¼¼Áö] Id¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("[ë©”ì„¸ì§€] Idë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		String id = sc.next();
-		System.out.print("Pw¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("Pwë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		String pw = sc.next();
 		
 		for(int i=0; i<um.getUserSize(); i++) {
 			if(id.equals(um.getUser(i).getId()) && pw.equals(um.getUser(i).getPw()))
 				Shop.log = i;
 		}
-		if(Shop.log == -1) System.out.println("[¸Ş¼¼Áö] ·Î±×ÀÎ¿¡ ½ÇÆĞÇÏ¼Ì½À´Ï´Ù\nId/Pw È®ÀÎ ÈÄ ´Ù½Ã ·Î±×ÀÎÇØÁÖ¼¼¿ä");
-		else if(Shop.log != -1) System.out.println("[¸Ş½ÃÁö] ·Î±×ÀÎ ¼º°ø");
+		if(Shop.log == -1) System.out.println("[ë©”ì„¸ì§€] ë¡œê·¸ì¸ì— ì‹¤íŒ¨í•˜ì…¨ìŠµë‹ˆë‹¤\nId/Pw í™•ì¸ í›„ ë‹¤ì‹œ ë¡œê·¸ì¸í•´ì£¼ì„¸ìš”");
+		else if(Shop.log != -1) System.out.println("[ë©”ì‹œì§€] ë¡œê·¸ì¸ ì„±ê³µ");
 	}
 	
 	private void logout() {
 		Shop.log = -1;
-		System.out.println("[¸Ş¼¼Áö] ·Î±×¾Æ¿ô ÇÏ¿´½À´Ï´Ù");
+		System.out.println("[ë©”ì„¸ì§€] ë¡œê·¸ì•„ì›ƒ í•˜ì˜€ìŠµë‹ˆë‹¤");
 	}
 }

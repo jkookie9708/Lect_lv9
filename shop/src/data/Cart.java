@@ -55,7 +55,7 @@ public class Cart {
 		String str = "";
 		str += "[" + this.itemName + "] ";
 		str += this.itmPrice;
-		str += " ( " + this.itemCount + "°³ )";
+		str += " ( " + this.itemCount + "ê°œ )";
 		return str;
 	};
 }

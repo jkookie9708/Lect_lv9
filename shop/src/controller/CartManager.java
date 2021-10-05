@@ -16,12 +16,12 @@ public class CartManager {
 	public void printCart(int log) {
 		if(cartList.size() > 0) {
 			System.out.println(cartList.get(log));
-		} else System.out.println("[¸Ş¼¼Áö] ºñ¾îÀÖÀ½");
+		} else System.out.println("[ë©”ì„¸ì§€] ë¹„ì–´ìˆìŒ");
 	}
 	
 	public void emptyCart(int log) {
 		if(cartList.size() > 0) {
-			System.out.println("[1] ÀüÃ¼ºñ¿ì±â\n[2] Ç×¸ñºñ¿ì±â");
+			System.out.println("[1] ì „ì²´ë¹„ìš°ê¸°\n[2] í•­ëª©ë¹„ìš°ê¸°");
 			int sel = ShopManager.sc.nextInt();
 			
 			if(sel == 1) cartList = new ArrayList<>();
@@ -29,7 +29,7 @@ public class CartManager {
 				System.out.println(cartList.get(log));
 				
 			}
-		} else System.out.println("[¸Ş¼¼Áö] ºñ¾îÀÖÀ½");
+		} else System.out.println("[ë©”ì„¸ì§€] ë¹„ì–´ìˆìŒ");
 	}
 	
 	public void payCartList(int log) {
@@ -40,14 +40,14 @@ public class CartManager {
 			for(int i=0; i<cartList.size(); i++) {
 				total += cartList.get(i).getItmPrice();
 			}
-			System.out.println("[°áÁ¦] ÃÑ ±İ¾× : " + total);
-			System.out.println("[°áÁ¦] °áÁ¦¸¦ ÁøÇàÇÏ½Ã°Ú½À´Ï±î [1]Yes [2]No");
+			System.out.println("[ê²°ì œ] ì´ ê¸ˆì•¡ : " + total);
+			System.out.println("[ê²°ì œ] ê²°ì œë¥¼ ì§„í–‰í•˜ì‹œê² ìŠµë‹ˆê¹Œ [1]Yes [2]No");
 			int sel = ShopManager.sc.nextInt();
 			if(sel==1) {
 				if(pm.getPoint(log).getPoint() > total) {
 					pm.getPoint(log).setPoint(pm.getPoint(log).getPoint()-total);
-					System.out.println("[°áÁ¦] °áÁ¦ ¿Ï·á\nÇöÀç ³²¾ÆÀÖ´Â Point´Â [ " + pm.getPoint(log).getPoint() + "¿ø ] ÀÔ´Ï´Ù");
-				} else System.out.println("[¸Ş¼¼Áö] ÃæÀüµÈ Point°¡ ºÎÁ·ÇÕ´Ï´Ù");
+					System.out.println("[ê²°ì œ] ê²°ì œ ì™„ë£Œ\ní˜„ì¬ ë‚¨ì•„ìˆëŠ” PointëŠ” [ " + pm.getPoint(log).getPoint() + "ì› ] ì…ë‹ˆë‹¤");
+				} else System.out.println("[ë©”ì„¸ì§€] ì¶©ì „ëœ Pointê°€ ë¶€ì¡±í•©ë‹ˆë‹¤");
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

@@ -20,18 +20,18 @@ public class ItemManager {
 			for(int i = 0; i<itemList.size(); i++) {
 				System.out.println(itemList.get(i));
 			}
-		} else System.out.println("[¸Ş¼¼Áö] ¾ÆÀÌÅÛ Ç×¸ñÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù");
+		} else System.out.println("[ë©”ì„¸ì§€] ì•„ì´í…œ í•­ëª©ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤");
 	}
 	
 	public void addItem() {
 		
-		System.out.print("[»óÇ° Ãß°¡] »óÇ° ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("[ìƒí’ˆ ì¶”ê°€] ìƒí’ˆ ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 		String name = sc.next();
-		System.out.print("[»óÇ° Ãß°¡]°¡°İÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("[ìƒí’ˆ ì¶”ê°€]ê°€ê²©ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 		int price = sc.nextInt();
 		printCategory();
 		if(category.size() > 0) {
-			System.out.print("[»óÇ° Ãß°¡] Ä«Å×°í¸® ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.print("[ìƒí’ˆ ì¶”ê°€] ì¹´í…Œê³ ë¦¬ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 			int sel = sc.nextInt();
 			Item temp = new Item(name, price, category.get(sel));
 			itemList.add(temp);
@@ -39,13 +39,13 @@ public class ItemManager {
 	}
 	
 	public void removeItem() {
-		System.out.print("[¾ÆÀÌÅÛ »èÁ¦] Ä«Å×°í¸® ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("[ì•„ì´í…œ ì‚­ì œ] ì¹´í…Œê³ ë¦¬ ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 		String name = sc.next();
 		
 		for(int i=0; i<itemList.size(); i++) {
 			if(itemList.get(i).getName().equals(name)) {
 				itemList.remove(i);
-				System.out.println("[¾ÆÀÌÅÛ »èÁ¦] ¾ÆÀÌÅÛ »èÁ¦°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù ");
+				System.out.println("[ì•„ì´í…œ ì‚­ì œ] ì•„ì´í…œ ì‚­ì œê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤ ");
 			}
 		}
 	}
@@ -57,24 +57,24 @@ public class ItemManager {
 			for(int i=0; i < category.size(); i++) {
 				System.out.println("[" + i + "]" + category.get(i));
 			}
-		} else System.out.println("[¸Ş¼¼Áö] Ä«Å×°í¸® Ç×¸ñÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù");
+		} else System.out.println("[ë©”ì„¸ì§€] ì¹´í…Œê³ ë¦¬ í•­ëª©ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤");
 	}
 	
 	public void addCategory() {
-	System.out.print("[Ä«Å×°í¸® Ãß°¡] Ä«Å×°í¸® ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ");	
+	System.out.print("[ì¹´í…Œê³ ë¦¬ ì¶”ê°€] ì¹´í…Œê³ ë¦¬ ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : ");	
 	String name = sc.next();
 	
 	category.add(name);
 	}
 	
 	public void removeCategory() {
-		System.out.print("[Ä«Å×°í¸® »èÁ¦] Ä«Å×°í¸® ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("[ì¹´í…Œê³ ë¦¬ ì‚­ì œ] ì¹´í…Œê³ ë¦¬ ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 		String name = sc.next();
 		
 		for(int i=0; i<category.size(); i++) {
 			if(category.get(i).equals(name)) {
 				category.remove(i);	
-				System.out.println("[Ä«Å×°í¸® »èÁ¦] Ä«Å×°í¸® »èÁ¦°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù ");
+				System.out.println("[ì¹´í…Œê³ ë¦¬ ì‚­ì œ] ì¹´í…Œê³ ë¦¬ ì‚­ì œê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤ ");
 			}
 		}
 	}
