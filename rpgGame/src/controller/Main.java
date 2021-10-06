@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 	
-	Scanner sc = new Scanner(System.in);
+	static Scanner sc = new Scanner(System.in);
 	
 	public void MainGame() {
 		boolean isRun = true;
