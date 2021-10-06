@@ -24,7 +24,7 @@ public class Main {
 	
 	private void GameStartMenu() {
 		System.out.println("1] 새로운모험 시작");
-		System.out.println("2] 불러오기");
+		System.out.println("2] 불러오기 ");
 		System.out.println("3] 종   료");
 	}
 
