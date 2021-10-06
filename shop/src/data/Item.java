@@ -34,7 +34,7 @@ public class Item {
 		String str = "";
 		str += "[" + this.category + "] ";
 		str += this.name;
-		str += " ( " + this.price + "¿ø )";
+		str += " ( " + this.price + "ì› )";
 		return str;
 	};
 	
