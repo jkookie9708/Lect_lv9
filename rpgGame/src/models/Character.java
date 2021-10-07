@@ -45,6 +45,15 @@ public class Character {
 	public int getLevel() {
 		return level;
 	}
+	
+
+	public int getGold() {
+		return gold;
+	}
+
+	public void setGold(int gold) {
+		this.gold = gold;
+	}
 
 	public void setName(String name) {
 		this.name = name;

@@ -12,6 +12,8 @@ public class Main {
 	static Random rn = new Random();
 	
 	private CharacterManager cm = new CharacterManager();
+	private PartyManager pm = new PartyManager();
+	
 	private SaveFile sf = new SaveFile();
 	
 	public void MainGame() {
@@ -48,7 +50,10 @@ public class Main {
 			try {
 				int sel = Integer.parseInt(input);
 				
-				if(sel == 1) cm.creativeCharacter();
+				if(sel == 1) {
+					cm.creativeCharacter();
+					break;
+				}
 				else if(sel == 2) {}
 				else if(sel == 3) break;
 			} catch (Exception e) {
@@ -62,15 +67,14 @@ public class Main {
 		boolean isRun = true;
 		while(isRun) {
 		System.out.println("============ village ============");
-		System.out.println("[1.전투] [2.파티관리] [3.상점] [4.인벤토리]");
-		System.out.println("[5.저장] [6.로드] [0.종료]");
+		System.out.println("[1.전투] [2.선술집] [3.상점] [4.인벤토리]\n[5.저장] [6.로드] [0.종료]");
 		String input = sc.next();
 		
 		try {
 			int sel = Integer.parseInt(input);
 			
 			if(sel == 1) {}
-			else if(sel == 2) {}
+			else if(sel == 2) pm.PartyMenu();
 			else if(sel == 3) {}
 			else if(sel == 4) {}
 			else if(sel == 5) {

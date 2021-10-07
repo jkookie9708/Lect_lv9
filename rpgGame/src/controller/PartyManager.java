@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 import models.PartyMember;
 
-public class PratyManager {
+public class PartyManager {
 	
+	public static PartyManager instance = new PartyManager();
+	private CharacterManager cm = new CharacterManager();
 	private ArrayList<PartyMember> party = new ArrayList<>();
 	private PartyMember [] partyList;
 	private final int PARTY_SIZE = 4;
@@ -14,17 +16,17 @@ public class PratyManager {
 		boolean isRun = true;
 		while (isRun) {
 			System.out.println("=============== [파티 관리] ================");
-			System.out.println("[1.용병단목록] [2.파티원추가] [3.파티원추방]\n[4.파티원목록] [5.파티원교체] [0.뒤로가기]");
+			System.out.println("[1.용병 모집] [2.파티원목록] [3.파티원추가]\n[4.파티원교체] [5.파티추방] [0.뒤로가기]");
 			String input = Main.sc.next();
 			
 			try {
 				int sel = Integer.parseInt(input);
 				
 				if(sel == 1) printAllPartyMembers();
-				else if(sel == 2) addPartyMember();
-				else if(sel == 3) removePartyMember();
-				else if(sel == 4) printPartyMembers();
-				else if(sel == 5) switchPartyMember();
+				else if(sel == 2) printPartyMembers();
+				else if(sel == 3) addPartyMember();
+				else if(sel == 4) switchPartyMember();
+				else if(sel == 5) removePartyMember();
 				else if(sel == 0) break;
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -76,6 +78,7 @@ public class PratyManager {
 						partyList[n]=party.get(i);
 						n++;
 					}
+				}
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
@@ -86,7 +89,7 @@ public class PratyManager {
 			}	
 		}
 
-	}
+	
 	
 	public void removePartyMember() {
 			printAllPartyMembers();
@@ -120,11 +123,45 @@ public class PratyManager {
 		try {
 			int sel = Integer.parseInt(input);
 			
-			if(sel )
+			if(sel)
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 	}
+	
+	public void buyUnit() {
+		if (Character.getGold).money < 5000)
+			
+	
+		String name = n1[MainGame.ran.nextInt(n1.length)];
+		name += n2[MainGame.ran.nextInt(n1.length)];
+		name += n3[MainGame.ran.nextInt(n1.length)];
+		int ran = MainGame.ran.nextInt(8) + 2;
+		int hp = ran * 11;
+		int att = ran + 1;
+		int def = ran / 2 + 1;
+		Unit temp = new Unit(name, 1, hp, att, def, 0);
+
+		System.out.println("=====================================");
+		System.out.print("[이름 : " + name + "]");
+		System.out.print(" [레벨 : " + 1 + "]");
+		System.out.print(" [체력 : " + hp);
+		System.out.println(" / " + hp + "]");
+		System.out.print("[공격력 : " + att + "]");
+		System.out.println(" [방어력 : " + def + "]");
+		System.out.println("길드원을 추가합니다.");
+		System.out.println("=====================================");
+
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		guildList.add(temp);
+		Player.money -= 5000;
+	}
+	
 	public void printAllPartyMembers() {
 		
 		for (int i = 0; i < party.size(); i++) {
