@@ -2,6 +2,7 @@ package controller;
 
 import java.util.ArrayList;
 
+import models.Character;
 import models.PartyMember;
 
 public class PartyManager {
@@ -130,7 +131,7 @@ public class PartyManager {
 	}
 	
 	public void buyUnit() {
-		if (Character.getGold).money < 5000)
+		if (Character.getGold < 5000)
 			
 	
 		String name = n1[MainGame.ran.nextInt(n1.length)];
