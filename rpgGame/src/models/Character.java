@@ -13,8 +13,15 @@ public class Character {
 	private int AGI;
 	private int INT;
 	
+	private int maxhp;
+	private int hp;
+	private int maxmp;
+	private int mp;
+	private int att;
+	private int def;
 	
-	public Character(String gender, String name, int age, int STR, int AGI, int INT) {
+	
+	public Character(String gender, String name, int age, int STR, int AGI, int INT, int hp, int mp) {
 		this.level = 1;
 		this.gender = gender;
 		this.name = name;
@@ -22,7 +29,11 @@ public class Character {
 		this.STR = STR;
 		this.AGI = AGI;
 		this.INT = INT;
-		this.gold = 0;
+		this.maxhp = hp;
+		this.hp = maxhp;
+		this.maxmp = mp;
+		this.mp = maxmp;
+		this.gold = 50000;
 	}
 
 	public String getName() {
@@ -39,6 +50,10 @@ public class Character {
 
 	public int getLevel() {
 		return level;
+	}
+	
+	public int getGold() {
+		return gold;
 	}
 
 	public void setName(String name) {

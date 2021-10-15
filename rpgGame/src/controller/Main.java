@@ -29,7 +29,7 @@ public class Main {
 	
 	private void GameTitle() {
 		System.out.println("╊─━──━━───━──━━──╉");
-		System.out.println("│ asdfasdfasdfas │");
+		System.out.println("│   Green  RPG   │");
 		System.out.println("╉━──━━───━───━──━╉");
 	}
 	

@@ -6,7 +6,7 @@ import models.Character;
 
 public class CharacterManager {
 
-	private ArrayList<Character> characters = new ArrayList<>();
+	public static ArrayList<Character> characters = new ArrayList<>();
 	public static CharacterManager instance = new CharacterManager();
 	
 	public void creativeCharacter() {
@@ -57,8 +57,7 @@ public class CharacterManager {
 		
 		Character temp = new Character(gender, name, age, STR, AGI, INT, (STR*5)+50, (INT*3)+50);
 		this.characters.add(temp);
-		System.out.println("[메세지] [Lv.1] " + temp.getName() + " 이/가 생성되었습니다");
+		System.out.println("[메세지] [Lv.1] " + temp.getName() +" 이/가 생성되었습니다");
 		}
-	
 	
 }

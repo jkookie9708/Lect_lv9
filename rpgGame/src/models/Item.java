@@ -17,6 +17,14 @@ public class Item {
 	public String getName() {
 		return name;
 	}
+
+	public int getPower() {
+		return power;
+	}
+
+	public int getPrice() {
+		return price;
+	}
 	
 	
 }
