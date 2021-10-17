@@ -1,10 +1,10 @@
 package data;
 
-public class UnipueZombie extends Unit {
+public class UniqueZombie extends Unit {
 
 	int shield;
 	
-	public UnipueZombie(String name, int hp, int att, int def, int pos) {
+	public UniqueZombie(String name, int hp, int att, int def, int pos, int shield) {
 		super(name, hp, att, def, pos);
 		this.shield = shield;
 	}
